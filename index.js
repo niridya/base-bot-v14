@@ -27,7 +27,6 @@ client.login(client.shadow.token);
 
 // chargement des events
 const eventFiles = fs.readdirSync("./events").filter(file => file.endsWith(".js"));
-// console.log(eventFiles)
 for (const file of eventFiles) {
     const event = require(`./events/${file}`);
     if (event.once) {
@@ -40,7 +39,6 @@ for (const file of eventFiles) {
 // chargement des commandes
 client.commands = new Collection();
 const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
-// console.log(commandFiles)
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
