@@ -1,10 +1,38 @@
-const { Client, Collection, GatewayIntentBits, Partials, ActivityType } = require("discord.js");
+const { Client, Collection, GatewayIntentBits: Intents, Partials, ActivityType } = require("discord.js");
 const fs = require("fs");
 const colors = require("colors");
 
 const client = new Client({
-    intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildModeration, GatewayIntentBits.GuildEmojisAndStickers, GatewayIntentBits.GuildIntegrations, GatewayIntentBits.GuildWebhooks, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildMessageTyping, GatewayIntentBits.DirectMessages, GatewayIntentBits.DirectMessageReactions, GatewayIntentBits.DirectMessageTyping, GatewayIntentBits.GuildScheduledEvents, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ],
-    partials: [ Partials.Channel, Partials.GuildMember, Partials.GuildScheduledEvent, Partials.Message, Partials.Reaction, Partials.ThreadMember, Partials.User ],
+    intents: [
+        Intents.AutoModerationConfiguration,
+        Intents.AutoModerationExecution,
+        Intents.DirectMessageReactions,
+        Intents.DirectMessageReactions,
+        Intents.DirectMessages,
+        Intents.GuildEmojisAndStickers,
+        Intents.GuildEmojisAndStickers,
+        Intents.GuildInvites,
+        Intents.GuildMembers,
+        Intents.GuildMessageReactions,
+        Intents.GuildMessageTyping,
+        Intents.GuildMessages,
+        Intents.GuildMessages,
+        Intents.GuildPresences,
+        Intents.GuildScheduledEvents,
+        Intents.GuildVoiceStates,
+        Intents.GuildVoiceStates,
+        Intents.Guilds,
+        Intents.MessageContent,
+    ],
+    partials: [
+        Partials.User,
+        Partials.Channel,
+        Partials.GuildMember,
+        Partials.Message,
+        Partials.Reaction,
+        Partials.GuildScheduledEvent,
+        Partials.ThreadMember,
+    ],
     restTimeOffset: 0,
     failIfNotExists: false,
     presence: {
