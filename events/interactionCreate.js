@@ -15,16 +15,16 @@ module.exports = {
 
         // botOwnerOnly
         const isBotOwner = client.config.owners.includes(interaction.user.id);
-        if (command.permissions && command.botOwnerOnly && !isBotOwner)return interaction.reply({ content: `❌ **Vous devez être le propriétaire du bot pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
+        if (command.permissions && command.botOwnerOnly && !isBotOwner) return interaction.reply({ content: `❌ **Vous devez être le propriétaire du bot pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
             
         // guildOwnerOnly
         const isGuildOwner = interaction.member.guild.ownerId != interaction.user.id;
-        if (command.permissions && command.guildOwnerOnly && !isBotOwner && !isGuildOwner)return interaction.reply({ content: `❌ **Vous devez être le propriétaire du serveur pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
+        if (command.permissions && command.guildOwnerOnly && !isBotOwner && !isGuildOwner) return interaction.reply({ content: `❌ **Vous devez être le propriétaire du serveur pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
             
         // permissions
         const authorPerms = interaction.guild.channels.cache.get(interaction.channelId).permissionsFor(interaction.user);
         const hasPerms = authorPerms && authorPerms.has(command.permissions);
-        if (!hasPerms && !isBotOwner)return interaction.reply({ content: `❌ **Vous n'avez pas les permissions nécessaires pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
+        if (!hasPerms && !isBotOwner) return interaction.reply({ content: `❌ **Vous n'avez pas les permissions nécessaires pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
 
 
         command.executeSlash(client, interaction);
