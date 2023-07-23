@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Niridya#0001",
-  "license": "ISC",
+  "author": "niridya",
+  "license": "CC0 1.0 Universal",
   "dependencies": {
     "discord.js": "*",
     "colors": "*"
