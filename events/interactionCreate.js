@@ -18,7 +18,7 @@ module.exports = {
         if (command.permissions && command.botOwnerOnly && !isBotOwner) return interaction.reply({ content: `❌ **Vous devez être le propriétaire du bot pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
             
         // guildOwnerOnly
-        const isGuildOwner = interaction.member.guild.ownerId != interaction.user.id;
+        const isGuildOwner = interaction.member.guild.ownerId == interaction.user.id;
         if (command.permissions && command.guildOwnerOnly && !isBotOwner && !isGuildOwner) return interaction.reply({ content: `❌ **Vous devez être le propriétaire du serveur pour exécuter cette commande.**`, ephemeral: true }).catch(() => {});
             
         // permissions
