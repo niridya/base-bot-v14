@@ -23,7 +23,7 @@ module.exports = {
         if (command.permissions && command.botOwnerOnly && !isBotOwner) return message.reply("Vous devez être le propriétaire du bot pour exécuter cette commande.").catch(() => {});
 
         // guildOwnerOnly
-        const isGuildOwner = message.guild.ownerId != message.author.id;
+        const isGuildOwner = message.guild.ownerId == message.author.id;
         if (command.permissions && command.guildOwnerOnly && !isBotOwner && !isBotOwner) return message.reply("Vous devez être le propriétaire du serveur pour exécuter cette commande.").catch(() => {});
 
         // permissions
