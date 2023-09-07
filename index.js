@@ -34,7 +34,7 @@ for (const file of eventFiles) {
     } else {
         client.on(event.name, (...args) => event.execute(client, ...args));
     }
-}
+};
 
 // chargement des commandes
 client.commands = new Collection();
@@ -42,12 +42,14 @@ const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith("
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
-}
+};
 
 // gestion des erreurs
 process.on("unhandledRejection", (error) => {
     // erreurs ignorées
     if (error.code == 10062) return; // Unknown interaction
+    if (error.code == 40060) return; // Interaction has already been acknowledged
 
     console.log(`[ERROR] ${error}`.red);
 })
+;
