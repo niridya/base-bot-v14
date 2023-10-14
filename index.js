@@ -45,11 +45,12 @@ for (const file of commandFiles) {
 };
 
 // gestion des erreurs
-process.on("unhandledRejection", (error) => {
+async function errorHandler(error) {
     // erreurs ignorées
     if (error.code == 10062) return; // Unknown interaction
     if (error.code == 40060) return; // Interaction has already been acknowledged
 
     console.log(`[ERROR] ${error}`.red);
-})
-;
+};
+process.on("unhandledRejection", errorHandler);
+process.on("uncaughtException", errorHandler);
