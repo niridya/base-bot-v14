@@ -23,8 +23,8 @@ module.exports = {
                     });
                 };
 
-                const authorPerms = interaction.guild.channels.cache.get(interaction.channelId).permissionsFor(interaction.user);
-                if ((!authorPerms || !authorPerms.has(command.permissions)) && !client.config.owners.includes(interaction.user.id)) return interaction.reply({
+                const authorPerms = interaction.channel.permissionsFor(interaction.user) || interaction.member.permissions;
+                if (!authorPerms.has(command.permissions) && !client.config.owners.includes(interaction.user.id)) return interaction.reply({
                     content: `❌ **Vous n'avez pas les permissions nécessaires pour exécuter cette commande.**`,
                     ephemeral: true
                 });
