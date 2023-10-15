@@ -4,7 +4,7 @@ module.exports = {
     name: "ping",
     description: "Afficher le ping du bot.",
     aliases: [],
-    permissions: [PermissionsBitField.Flags.ViewChannel],
+    permissions: new PermissionsBitField().add(PermissionsBitField.Flags.ViewChannel),
     guildOwnerOnly: false,
     botOwnerOnly: false,
     async execute(client, message, args) {
