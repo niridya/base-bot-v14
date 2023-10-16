@@ -1,6 +1,6 @@
 const { Client, Collection, GatewayIntentBits, Partials, ActivityType } = require("discord.js");
-const fs = require("fs");
 const colors = require("colors");
+const fs = require("fs");
 
 const client = new Client({
     intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildModeration, GatewayIntentBits.GuildEmojisAndStickers, GatewayIntentBits.GuildIntegrations, GatewayIntentBits.GuildWebhooks, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildMessageTyping, GatewayIntentBits.DirectMessages, GatewayIntentBits.DirectMessageReactions, GatewayIntentBits.DirectMessageTyping, GatewayIntentBits.GuildScheduledEvents, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ],
@@ -20,9 +20,12 @@ const client = new Client({
         repliedUser: false
     }
 });
+
+// ajout des propriétés
 client.config = require("./config.json");
 client.shadow = require("./shadow.json");
 
+// connexion à Discord
 client.login(client.shadow.token);
 
 // chargement des events
