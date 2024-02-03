@@ -31,7 +31,7 @@ module.exports = {
             };
 
             command.executeSlash(client, interaction);
-            console.log(`[CMD-S]`.brightBlue + ` ${interaction.guild.name} | ${interaction.channel.name} | ${interaction.user.tag} | ${command.name}`);
+            console.log("[CMD-S]".brightBlue, `${interaction.guild.name} | ${interaction.channel.name} | ${interaction.user.tag} | ${command.name}`);
         };
     }
 }

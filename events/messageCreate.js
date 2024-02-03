@@ -27,6 +27,6 @@ module.exports = {
         };
 
         command.execute(client, message, args);
-        console.log(`[CMD]`.brightBlue + ` ${message.guild.name} | ${message.channel.name} | ${message.author.tag} | ${command.name}`);
+        console.log("[CMD]".brightBlue, `${message.guild.name} | ${message.channel.name} | ${message.author.tag} | ${command.name}`);
     }
 }
