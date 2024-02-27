@@ -1,4 +1,4 @@
-const { Client, Collection, GatewayIntentBits, Partials, ActivityType } = require("discord.js");
+const { ActivityType, Client, Collection, GatewayIntentBits, Partials } = require("discord.js");
 const colors = require("colors");
 const fs = require("fs");
 
@@ -9,7 +9,7 @@ const client = new Client({
     failIfNotExists: false,
     presence: {
         activities: [{
-            name: `choisis ton statut.`,
+            name: "Un statut hyper cool !",
             type: ActivityType.Streaming,
             url: "https://www.twitch.tv/niridya"
         }],
@@ -36,7 +36,7 @@ for (const file of eventFiles) {
         client.once(event.name, (...args) => event.execute(client, ...args));
     } else {
         client.on(event.name, (...args) => event.execute(client, ...args));
-    }
+    };
 };
 
 // chargement des commandes
@@ -53,7 +53,8 @@ async function errorHandler(error) {
     if (error.code == 10062) return; // Unknown interaction
     if (error.code == 40060) return; // Interaction has already been acknowledged
 
-    console.log(`[ERROR] ${error}`.red);
+    return console.log(`[ERROR] ${error}`.red);
 };
+
 process.on("unhandledRejection", errorHandler);
 process.on("uncaughtException", errorHandler);
