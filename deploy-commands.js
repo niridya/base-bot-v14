@@ -3,15 +3,16 @@ const { REST } = require('@discordjs/rest');
 const fs = require('fs');
 
 const shadow = require("./shadow.json");
-const guildId = "id de serveur pour les commandes de serveur";
-const clientId = "id du bot";
+const config = require('./config.json')
+const guildId = config.guildId;
+const clientId = config.clientId;
 
 const commands = [];
 
 const commandFiles = fs.readdirSync(`${__dirname}/commands`).filter(file => file.endsWith(".js"));
 commandFiles.forEach(commandFile => {
     const command = require(`${__dirname}/commands/${commandFile}`);
-    if (command.data && !command.botOwnerOnly) commands.push(command.data.toJSON());
+    if (command.data /*&& !command.botOwnerOnly*/) commands.push(command.data.toJSON());
 });
 
 const rest = new REST({ version: '10' }).setToken(shadow.token);

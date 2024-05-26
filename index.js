@@ -1,6 +1,10 @@
 const { Client, Collection, GatewayIntentBits, Partials, ActivityType } = require("discord.js");
 const colors = require("colors");
 const fs = require("fs");
+const { config } = require("process");
+
+const configfile = require("./config.json");
+const shadow = require("./shadow.json");
 
 const client = new Client({
     intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildModeration, GatewayIntentBits.GuildEmojisAndStickers, GatewayIntentBits.GuildIntegrations, GatewayIntentBits.GuildWebhooks, GatewayIntentBits.GuildInvites, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessageReactions, GatewayIntentBits.GuildMessageTyping, GatewayIntentBits.DirectMessages, GatewayIntentBits.DirectMessageReactions, GatewayIntentBits.DirectMessageTyping, GatewayIntentBits.GuildScheduledEvents, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ],
@@ -9,11 +13,11 @@ const client = new Client({
     failIfNotExists: false,
     presence: {
         activities: [{
-            name: `choisis ton statut.`,
-            type: ActivityType.Streaming,
-            url: "https://www.twitch.tv/niridya"
+            name: configfile.activityname,
+            type: ActivityType.Playing,
+            url: configfile.activityurl
         }],
-        status: "online"
+        status: configfile.activitystatus
     },
     allowedMentions: {
         parse: ["roles", "users", "everyone"],

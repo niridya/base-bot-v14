@@ -19,14 +19,14 @@ module.exports = {
             };
 
             if (command.guildOwnerOnly) {
-                if (message.guild.ownerId != message.author.id && !client.config.owners.includes(message.author.id)) return message.reply("Vous devez être le propriétaire du serveur pour exécuter cette commande.").catch(() => {});
+                if (message.guild.ownerId != message.author.id && !client.config.owners.includes(message.author.id)) return message.reply("> :no_entry_sign: Vous devez être le **propriétaire du serveur** pour exécuter cette commande.").catch(() => {});
             };
 
             const authorPerms = message.channel.permissionsFor(message.author) || message.member.permissions;
-            if (!authorPerms.has(command.permissions) && !client.config.owners.includes(message.author.id)) return message.reply("Vous n'avez pas les permissions nécessaires pour exécuter cette commande.").catch(() => {});
+            if (!authorPerms.has(command.permissions) && !client.config.owners.includes(message.author.id)) return message.reply("> :no_entry_sign: Vous n'avez pas les **permissions nécessaires** pour exécuter cette commande.").catch(() => {});
         };
 
         command.execute(client, message, args);
-        console.log("[CMD]".brightBlue, `${message.guild.name} | ${message.channel.name} | ${message.author.tag} | ${command.name}`);
+        console.log("[CMD-M]".brightBlue, `${message.guild.name} | ${message.channel.name} | ${message.author.tag} | ${command.name}`);
     }
 }
