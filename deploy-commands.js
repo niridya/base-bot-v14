@@ -12,7 +12,7 @@ const commands = [];
 const commandFiles = fs.readdirSync(`${__dirname}/commands`).filter(file => file.endsWith(".js"));
 commandFiles.forEach(commandFile => {
     const command = require(`${__dirname}/commands/${commandFile}`);
-    if (command.data /*&& !command.botOwnerOnly*/) commands.push(command.data.toJSON());
+    if (command.data && !command.botOwnerOnly) commands.push(command.data.toJSON());
 });
 
 const rest = new REST({ version: '10' }).setToken(shadow.token);

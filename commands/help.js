@@ -15,7 +15,7 @@ module.exports = {
         message.reply(helpMessage).catch(() => {});
     },
     async executeSlash(client, interaction) {
-        let helpMessage = "> :vibration_mode: **Liste des commande de <@${client.user.id}>** :\n\n";
+        let helpMessage = `> :vibration_mode: **Liste des commande de <@${client.user.id}>** :\n\n`;
         client.commands.forEach(command => {
             helpMessage += `> :robot: Nom de la commande : **${command.name}**\n> :newspaper: Description : **${command.description}**\n\n`;
         });

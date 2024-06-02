@@ -11,7 +11,7 @@ module.exports = {
             if (command.permissions) {
                 if (command.botOwnerOnly) {
                     if (!client.config.owners.includes(interaction.user.id)) return interaction.reply({
-                        content: `> :no_entry_sign: **Vous devez être le **propriétaire du bot** pour exécuter cette commande.**`,
+                        content: `> :no_entry_sign: Vous devez être le **propriétaire du bot** pour exécuter cette commande.`,
                         ephemeral: true
                     });
                 };
