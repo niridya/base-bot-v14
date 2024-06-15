@@ -1,4 +1,9 @@
 {
     "prefix": "!",
-    "owners": ["IDs des propriétaires du bot"]
+    "owners": ["IDs des propriétaires du bot"],
+    "guildId": "id de serveur (si les commandes doivent êtres restreintes à certains serveurs)",
+    "clientId" : "id du bot",
+    "activityname": "statut à afficher, pour changer le type (joue, regarde, ...) rends toi dans index",
+    "activityurl": "lien du bouton regarder (si l'activité est streaming)",
+    "activitystatus": "état (online, idle, dnd, invisible)"
 }

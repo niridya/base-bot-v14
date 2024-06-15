@@ -3,8 +3,9 @@ const { REST } = require('@discordjs/rest');
 const fs = require('fs');
 
 const shadow = require("./shadow.json");
-const guildId = "id de serveur pour les commandes de serveur";
-const clientId = "id du bot";
+const config = require('./config.json')
+const guildId = config.guildId;
+const clientId = config.clientId;
 
 const commands = [];
 
