@@ -39,4 +39,4 @@ npm install
 2. Run `node deploy-commands.js`.
 
 ## Support
-Join https://discord.gg/antiraid to get support.
+Join https://discord.gg/niridya to get support.
