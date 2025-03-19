@@ -1,8 +1,6 @@
 module.exports = {
     name: "interactionCreate",
     async execute(client, interaction) {
-        if (!interaction.guild) return;
-
         if (interaction.isCommand()) {
             const command = client.commands.get(interaction.commandName);
             if (!command) return;
@@ -31,7 +29,7 @@ module.exports = {
             };
 
             command.executeSlash(client, interaction);
-            console.log("[CMD-S]".brightBlue, `${interaction.guild.name} | ${interaction.channel.name} | ${interaction.user.tag} | ${command.name}`);
+            console.log("[CMD-S]".brightBlue, interaction.guild ? `${interaction.guild.name} | ${interaction.channel.name}` : `DM`, `| ${interaction.user.tag} | ${command.name}`);
         };
     }
 }
