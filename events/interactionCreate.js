@@ -29,7 +29,7 @@ module.exports = {
             };
 
             command.executeSlash(client, interaction);
-            console.log("[CMD-S]".brightBlue, interaction.guild ? `${interaction.guild.name} | ${interaction.channel.name}` : `DM`, `| ${interaction.user.tag} | ${command.name}`);
+            console.log("[CMD-S]".blue, interaction.guild ? `${interaction.guild.name} | ${interaction.channel.name}` : `DM`, `| ${interaction.user.tag} | ${command.name}`);
         };
     }
 }
