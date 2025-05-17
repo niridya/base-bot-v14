@@ -10,7 +10,7 @@ module.exports = {
         const args = message.content.slice(client.config.prefix.length).trim().split(/ +/);
         const commandName = args.shift().toLowerCase();
         const command = client.commands.get(commandName) || client.commands.find(command => command.aliases && command.aliases.includes(commandName));
-        if (!command) return;
+        if (!command || !command.execute) return;
 
         // vérification des permissions
         if (command.botOwnerOnly) {
