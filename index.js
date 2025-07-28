@@ -53,7 +53,7 @@ async function errorHandler(error) {
     if (error.code == 10062) return; // Unknown interaction
     if (error.code == 40060) return; // Interaction has already been acknowledged
 
-    return console.log(`[ERROR] ${error}`.red);
+    console.log(`[ERROR] ${error}`.red);
 };
 
 process.on("unhandledRejection", errorHandler);
