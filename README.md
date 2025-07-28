@@ -5,7 +5,7 @@ Base bot for discord.js v14
 This code is a sample optimized and organized bot using Discord.js v14, including Slash commands.
 
 ## Before use
-- Install Node.js (>16)
+- Install Node.js (>22)
 - Install Visual Studio Code
 
 ## Installation
