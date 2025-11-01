@@ -95,7 +95,7 @@ node index.js
 
 ## 💬 Support
 
-Rejoignez le serveur Discord pour obtenir de l'aide : [discord.gg/niridya](https://discord.gg/niridya)
+Rejoignez le serveur Discord pour obtenir de l'aide : [discord.gg/antiraid](https://discord.gg/antiraid)
 
 ---
 
