@@ -67,20 +67,6 @@ Configurez le **préfixe** et les **propriétaires** :
 
 ---
 
-## 📝 Mise en place des commandes Slash
-
-1. Ouvrez `deploy-commands.js` et configurez :
-
-   * `clientId` : l'ID de votre bot.
-   * `guildId` (optionnel) : l'ID de votre serveur pour des commandes spécifiques.
-2. Déployez les commandes :
-
-```sh
-node deploy-commands.js
-```
-
----
-
 ## ▶️ Lancer le bot
 
 ```sh
