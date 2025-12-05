@@ -17,5 +17,6 @@ module.exports = {
         return new SlashCommandBuilder()
             .setName(this.name)
             .setDescription(this.description)
+            .setContexts(InteractionContextType.BotDM, InteractionContextType.Guild, InteractionContextType.PrivateChannel)
     }
 }
