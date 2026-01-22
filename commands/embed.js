@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionsBitField, EmbedBuilder } = require("discord.js");
+const { SlashCommandBuilder, PermissionsBitField, EmbedBuilder, Colors } = require("discord.js");
 
 module.exports = {
     name: "embed",
@@ -9,16 +9,16 @@ module.exports = {
     botOwnerOnly: false,
     async execute(client, message, args) {
         const embed = new EmbedBuilder()
-            .setTitle('Votre titre')
-            .setDescription('Votre description')
-            .setColor('Green') // Vous pouvez aussi mettre '#00ff00'
+            .setTitle("Votre titre")
+            .setDescription("Votre description")
+            .setColor(Colors.Green) // Vous pouvez aussi utiliser "#00ff00"
         message.reply({ embeds: [embed] }).catch(() => {});
     },
     async executeSlash(client, interaction) {
         const embed = new EmbedBuilder()
-            .setTitle('Votre titre')
-            .setDescription('Votre description')
-            .setColor('Green') // Vous pouvez aussi mettre '#00ff00'
+            .setTitle("Votre titre")
+            .setDescription("Votre description")
+            .setColor(Colors.Green) // Vous pouvez aussi utiliser "#00ff00"
         interaction.reply({ embeds: [embed] }).catch(() => {});
     },
     get data() {
